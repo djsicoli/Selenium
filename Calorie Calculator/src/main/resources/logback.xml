@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Appender for console -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger set to WARN to reduce overall verbosity -->
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- Specific logger for your application with INFO level -->
+    <logger name="org.dj" level="INFO"/>
+
+    <!-- Reduce logging for Selenium and WebDriver -->
+    <logger name="org.openqa.selenium" level="WARN"/>
+
+    <!-- Reduce logging for io.netty -->
+    <logger name="io.netty" level="WARN"/>
+
+</configuration>
+
+
